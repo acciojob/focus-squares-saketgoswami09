@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Colorful Squares</title>
-	<style>
-		.square {
-			width: 50px;
-			height: 50px;
-			display: inline-block;
-			margin: 10px;
-			background-color: #E6E6FA; /*lavender */
-			cursor: pointer;
-		}
-	</style>
+    <title>Colorful Squares</title>
+    <style>
+        .square {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            margin: 10px;
+            background-color: #E6E6FA; /*lavender */
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-	<div class="square" id="square1" ></div>
-	<div class="square" id="square2" ></div>
-	<div class="square" id="square3" ></div>
+    <div class="square" id="square1" onmouseover="changeColors('square1')"></div>
+    <div class="square" id="square2" onmouseover="changeColors('square2')"></div>
+    <div class="square" id="square3" onmouseover="changeColors('square3')"></div>
 
-	<script type="text/javascript" src="./script.js">
+    <script type="text/javascript" src="./script.js">
+		// Function to change colors on hover
+function changeColors(currentSquareId) {
+    // Get all square elements
+    const squares = document.querySelectorAll('.square');
+    
+    // Loop through squares to change colors
+    squares.forEach(square => {
+        if (square.id !== currentSquareId) {
+            square.style.backgroundColor = '#6F4E37'; // Coffee color
+        }
+    });
+}
+
 	</script>
 </body>
 </html>
